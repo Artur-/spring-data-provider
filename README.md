@@ -1,4 +1,3 @@
-A Vaadin Framework 8 compatible Spring Data Provider, which supports paging
-and filtering. 
+A Spring Data Provider for Vaadin, with support for paging and filtering.
 
-For a usage example, see https://github.com/Artur-/spring-data-vaadin-crud
+For a usage example with Vaadin 8, see https://github.com/Artur-/spring-data-vaadin-crud
