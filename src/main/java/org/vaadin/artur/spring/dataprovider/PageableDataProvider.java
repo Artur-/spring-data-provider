@@ -15,7 +15,7 @@ import org.springframework.data.util.Pair;
 import com.vaadin.data.provider.AbstractBackEndDataProvider;
 import com.vaadin.data.provider.Query;
 import com.vaadin.data.provider.QuerySortOrder;
-import com.vaadin.shared.data.sort.SortDirection;
+import com.vaadin.data.provider.SortDirection;
 
 public abstract class PageableDataProvider<T, F>
         extends AbstractBackEndDataProvider<T, F> {
