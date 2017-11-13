@@ -18,10 +18,13 @@
 		<Implementation-Version>${project.version}</Implementation-Version>
 		<!-- Must not change this because of the Directory -->
 		<Implementation-Title>${project.name}</Implementation-Title>
-		<Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
 		<Vaadin-License-Title>Apache License 2.0</Vaadin-License-Title>
 		<Vaadin-Addon>${project.artifactId}-${project.version}.jar</Vaadin-Addon>
 	</properties>
+	<organization>
+		<name>Artur</name>
+	</organization>
+
 
 	<licenses>
 		<license>
