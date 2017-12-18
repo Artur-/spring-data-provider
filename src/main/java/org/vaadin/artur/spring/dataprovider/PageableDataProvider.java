@@ -88,7 +88,7 @@ public abstract class PageableDataProvider<T, F>
 
         int firstRequested = query.getOffset();
         int nrRequested = query.getLimit();
-        int firstReturned = pageable.getOffset();
+        int firstReturned = (int) pageable.getOffset();
         int firstReal = firstRequested - firstReturned;
         int afterLastReal = firstReal + nrRequested;
         if (afterLastReal > items.size()) {
