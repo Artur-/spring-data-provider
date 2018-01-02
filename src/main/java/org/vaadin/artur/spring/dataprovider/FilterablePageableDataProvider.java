@@ -1,9 +1,9 @@
 package org.vaadin.artur.spring.dataprovider;
 
-import com.vaadin.data.provider.Query;
-
 import java.util.Optional;
 import java.util.stream.Stream;
+
+import com.vaadin.flow.data.provider.Query;
 
 public abstract class FilterablePageableDataProvider<T, F>
         extends PageableDataProvider<T, F> {
@@ -29,7 +29,8 @@ public abstract class FilterablePageableDataProvider<T, F>
     }
 
     private Query<T, F> getFilterQuery(Query<T, F> t) {
-        return new Query(t.getOffset(), t.getLimit(), t.getSortOrders(), t.getInMemorySorting(), filter);
+        return new Query(t.getOffset(), t.getLimit(), t.getSortOrders(),
+                t.getInMemorySorting(), filter);
     }
 
     protected Optional<F> getOptionalFilter() {

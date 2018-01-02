@@ -12,10 +12,10 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.domain.Sort.Order;
 import org.springframework.data.util.Pair;
 
-import com.vaadin.data.provider.AbstractBackEndDataProvider;
-import com.vaadin.data.provider.Query;
-import com.vaadin.data.provider.QuerySortOrder;
-import com.vaadin.data.provider.SortDirection;
+import com.vaadin.flow.data.provider.AbstractBackEndDataProvider;
+import com.vaadin.flow.data.provider.Query;
+import com.vaadin.flow.data.provider.QuerySortOrder;
+import com.vaadin.flow.data.provider.SortDirection;
 
 public abstract class PageableDataProvider<T, F>
         extends AbstractBackEndDataProvider<T, F> {
@@ -57,10 +57,9 @@ public abstract class PageableDataProvider<T, F>
     protected abstract List<QuerySortOrder> getDefaultSortOrders();
 
     private static Order queryOrderToSpringOrder(QuerySortOrder queryOrder) {
-        return new Order(
-                queryOrder.getDirection() == SortDirection.ASCENDING
-                        ? Direction.ASC : Direction.DESC,
-                queryOrder.getSorted());
+        return new Order(queryOrder.getDirection() == SortDirection.ASCENDING
+                ? Direction.ASC
+                : Direction.DESC, queryOrder.getSorted());
     }
 
     public static Pair<Integer, Integer> limitAndOffsetToPageSizeAndNumber(
