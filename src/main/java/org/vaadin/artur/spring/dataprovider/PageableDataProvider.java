@@ -33,11 +33,11 @@ public abstract class PageableDataProvider<T, F>
     private Pageable getPageable(Query<T, F> q) {
         Pair<Integer, Integer> pageSizeAndNumber = limitAndOffsetToPageSizeAndNumber(
                 q.getOffset(), q.getLimit());
-        return new PageRequest(pageSizeAndNumber.getSecond(),
+        return PageRequest.of(pageSizeAndNumber.getSecond(),
                 pageSizeAndNumber.getFirst(), createSpringSort(q));
     }
 
-    private <T, F> Sort createSpringSort(Query<T, F> q) {
+    private Sort createSpringSort(Query<T, F> q) {
         List<QuerySortOrder> sortOrders;
         if (q.getSortOrders().isEmpty()) {
             sortOrders = getDefaultSortOrders();
@@ -50,7 +50,7 @@ public abstract class PageableDataProvider<T, F>
         if (orders.isEmpty()) {
             return null;
         } else {
-            return new Sort(orders);
+            return Sort.by(orders);
         }
     }
 
@@ -82,13 +82,13 @@ public abstract class PageableDataProvider<T, F>
         return Pair.of(maxPageSize, 0);
     }
 
-    private <T> Stream<T> fromPageable(Page<T> result, Pageable pageable,
+    private Stream<T> fromPageable(Page<T> result, Pageable pageable,
             Query<T, ?> query) {
         List<T> items = result.getContent();
 
         int firstRequested = query.getOffset();
         int nrRequested = query.getLimit();
-        int firstReturned = pageable.getOffset();
+        int firstReturned = (int) pageable.getOffset();
         int firstReal = firstRequested - firstReturned;
         int afterLastReal = firstReal + nrRequested;
         if (afterLastReal > items.size()) {
