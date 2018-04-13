@@ -5,7 +5,7 @@
 	<groupId>org.vaadin.artur</groupId>
 	<artifactId>spring-data-provider</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.1</version>
+	<version>1.1-SNAPSHOT</version>
 	<name>Spring Data Provider Add-on</name>
 
 	<properties>
@@ -40,7 +40,7 @@
 	</repositories>
 
 	<dependencies>
-		<dependency>from
+		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-server</artifactId>
 			<version>${vaadin.version}</version>
