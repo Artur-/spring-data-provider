@@ -22,10 +22,9 @@
         <Vaadin-Addon>${project.artifactId}-${project.version}.jar</Vaadin-Addon>
     </properties>
     <organization>
-        <name>Artur</name>
+        <name>Artur Signell</name>
+        <url>https://github.com/Artur-</url>
     </organization>
-
-
     <licenses>
         <license>
             <name>Apache 2</name>
