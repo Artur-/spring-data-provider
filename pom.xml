@@ -34,13 +34,6 @@
         </license>
     </licenses>
 
-    <repositories>
-        <repository>
-            <id>vaadin-pre-release</id>
-            <url>http://maven.vaadin.com/vaadin-prereleases/com/vaadin/</url>
-        </repository>
-    </repositories>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
