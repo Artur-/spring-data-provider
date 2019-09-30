@@ -48,7 +48,7 @@ public abstract class PageableDataProvider<T, F>
                 .map(PageableDataProvider::queryOrderToSpringOrder)
                 .collect(Collectors.toList());
         if (orders.isEmpty()) {
-            return null;
+            return Sort.unsorted();
         } else {
             return new Sort(orders);
         }
