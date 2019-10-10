@@ -33,8 +33,7 @@ public abstract class PageableDataProvider<T, F>
     private Pageable getPageable(Query<T, F> q) {
         Pair<Integer, Integer> pageSizeAndNumber = limitAndOffsetToPageSizeAndNumber(
                 q.getOffset(), q.getLimit());
-        return new PageRequest(pageSizeAndNumber.getSecond(),
-                pageSizeAndNumber.getFirst(), createSpringSort(q));
+        return PageRequest.of(pageSizeAndNumber.getSecond(), pageSizeAndNumber.getFirst(), createSpringSort(q));
     }
 
     private <T, F> Sort createSpringSort(Query<T, F> q) {
@@ -50,7 +49,7 @@ public abstract class PageableDataProvider<T, F>
         if (orders.isEmpty()) {
             return Sort.unsorted();
         } else {
-            return new Sort(orders);
+            return Sort.by(orders);
         }
     }
 
