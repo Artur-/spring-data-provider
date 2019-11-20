@@ -92,6 +92,9 @@ public abstract class PageableDataProvider<T, F>
         if (afterLastReal > items.size()) {
             afterLastReal = items.size();
         }
+        if (firstReal < 0 || firstReal > afterLastReal) {
+            firstReal = 0;
+        }
         return items.subList(firstReal, afterLastReal).stream();
     }
 
